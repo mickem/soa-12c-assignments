@@ -11,6 +11,14 @@
            xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy"
            xmlns:ui="http://xmlns.oracle.com/soa/designer/"
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/ReadOrders"
+          location="WSDLs/ReadOrders.wsdl" importType="wsdl"/>
+  <service name="ReadOrders" ui:wsdlLocation="WSDLs/ReadOrders.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/ReadOrders#wsdl.interface(Read_ptt)"/>
+    <binding.jca config="Adapters/ReadOrders_file.jca">
+      <property name="useRejectedMessageRecovery" type="xs:string" many="false" override="may">true</property>
+    </binding.jca>
+  </service>
   <property name="productVersion" type="xs:string" many="false">12.1.3.0.0</property>
   <property name="compositeID" type="xs:string" many="false">b0ef8785-20f1-4809-8393-95edc1364a01</property>
 </composite>

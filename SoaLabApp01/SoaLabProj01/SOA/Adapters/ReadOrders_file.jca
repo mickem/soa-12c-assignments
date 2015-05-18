@@ -1,0 +1,16 @@
+<adapter-config name="ReadOrders" adapter="file" wsdlLocation="../WSDLs/ReadOrders.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/FileAdapter" UIincludeWildcard="po*.xml"/>
+  <endpoint-activation portType="Read_ptt" operation="Read">
+    <activation-spec className="oracle.tip.adapter.file.inbound.FileActivationSpec">
+      <property name="DeleteFile" value="true"/>
+      <property name="MinimumAge" value="0"/>
+      <property name="PhysicalDirectory" value="c:\tmp\orders\in"/>
+      <property name="Recursive" value="true"/>
+      <property name="PollingFrequency" value="60"/>
+      <property name="IncludeFiles" value="po.*\.xml"/>
+      <property name="UseHeaders" value="false"/>
+    </activation-spec>
+  </endpoint-activation>
+
+</adapter-config>
