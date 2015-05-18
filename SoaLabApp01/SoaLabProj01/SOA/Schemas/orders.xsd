@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:po="http://schemas.medin.name/wicked/soa/lab/01/orders"
+            targetNamespace="http://schemas.medin.name/wicked/soa/lab/01/orders" elementFormDefault="qualified">
+  <xsd:element name="orders">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence maxOccurs="unbounded">
+        <xsd:element name="order">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="row" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="item" type="xsd:string"/>
+                    <xsd:element name="amount" type="xsd:int"/>
+                    <xsd:element name="price" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="date" type="xsd:dateTime"/>
+            <xsd:attribute name="number" type="xsd:long"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
