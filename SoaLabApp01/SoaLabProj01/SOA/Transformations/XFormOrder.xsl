@@ -35,6 +35,25 @@
   </oracle-xsl-mapper:schema>
   <!--User Editing allowed BELOW this line - DO NOT DELETE THIS LINE-->
   <xsl:template match="/">
-    <tns:Orders/>
+    <tns:Orders>
+      <tns:order>
+        <tns:date>
+          <xsl:value-of select="/ns0:orders/ns0:order/@date"/>
+        </tns:date>
+        <xsl:for-each select="/ns0:orders/ns0:order/ns0:row">
+          <tns:rows>
+            <tns:item>
+              <xsl:value-of select="ns0:item"/>
+            </tns:item>
+            <tns:amount>
+              <xsl:value-of select="ns0:amount"/>
+            </tns:amount>
+            <tns:price>
+              <xsl:value-of select="ns0:price"/>
+            </tns:price>
+          </tns:rows>
+        </xsl:for-each>
+      </tns:order>
+    </tns:Orders>
   </xsl:template>
 </xsl:stylesheet>
