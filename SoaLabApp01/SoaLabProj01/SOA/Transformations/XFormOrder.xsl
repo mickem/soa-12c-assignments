@@ -52,7 +52,7 @@
               <xsl:value-of select="ns0:amount"/>
             </tns:amount>
             <tns:price>
-              <xsl:value-of select="ns0:price"/>
+              <xsl:value-of select="translate (ns0:price, ',', '.' )"/>
             </tns:price>
           </tns:rows>
         </xsl:for-each>
