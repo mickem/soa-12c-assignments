@@ -1,0 +1,6 @@
+<schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	targetNamespace="http://xmlns.oracle.com/singleString"
+	xmlns="http://www.w3.org/2001/XMLSchema">
+	<element name="singleString" type="string" />
+</schema>
