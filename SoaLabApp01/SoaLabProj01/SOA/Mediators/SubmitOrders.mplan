@@ -5,6 +5,10 @@
       <switch>
          <case executionType="sequential" name="ProcessOrders.ReadOrders.Read">
             <action>
+               <assign>
+                  <copy expression="$in.request/inp1:orders" target="$out.body/inp1:orders"
+                        xmlns:inp1="http://schemas.medin.name/wicked/soa/lab/01/orders"/>
+               </assign>
                <invoke reference="ProcessOrders.ReadOrders" operation="Read"/>
             </action>
          </case>
