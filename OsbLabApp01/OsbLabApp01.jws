@@ -22,6 +22,9 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ApplicationBuildToolContentSet"/>
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
+   <list n="listOfChildren">
+      <hash><url n="URL" path="OsbLabProj01/OsbLabProj01.jpr"/></hash>
+   </list>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
          <hash n="OsbLabApp01_Project1_ServiceBusProfile">
