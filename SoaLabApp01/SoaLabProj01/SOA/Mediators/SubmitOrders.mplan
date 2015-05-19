@@ -12,6 +12,15 @@
                <invoke reference="ProcessOrders.ReadOrders" operation="Read"/>
             </action>
          </case>
+         <case executionType="sequential" name="echo.execute">
+            <action>
+               <assign>
+                  <copy expression="'Wicked'" target="$out.reply/inp2:singleString"
+                        xmlns:inp2="http://xmlns.oracle.com/singleString"/>
+               </assign>
+               <echo/>
+            </action>
+         </case>
       </switch>
    </operation>
 </Mediator>
