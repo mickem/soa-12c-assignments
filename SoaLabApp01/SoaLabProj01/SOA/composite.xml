@@ -13,6 +13,8 @@
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/ReadOrders"
           location="WSDLs/ReadOrders.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/WriteOrders"
+          location="WSDLs/WriteOrders.wsdl" importType="wsdl"/>
   <service name="ReadOrders" ui:wsdlLocation="WSDLs/ReadOrders.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/ReadOrders#wsdl.interface(Read_ptt)"/>
     <binding.jca config="Adapters/ReadOrders_file.jca">
@@ -21,4 +23,8 @@
   </service>
   <property name="productVersion" type="xs:string" many="false">12.1.3.0.0</property>
   <property name="compositeID" type="xs:string" many="false">b0ef8785-20f1-4809-8393-95edc1364a01</property>
+  <reference name="WriteOrders" ui:wsdlLocation="WSDLs/WriteOrders.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/WriteOrders#wsdl.interface(Write_ptt)"/>
+    <binding.jca config="Adapters/WriteOrders_file.jca"/>
+  </reference>
 </composite>

@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://TargetNamespace.com/WriteOrders" targetNamespace="http://TargetNamespace.com/WriteOrders" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="US-ASCII">
+   <xsd:element name="Orders">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="order">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="order_id" type="xsd:integer"/>
+                     <xsd:element name="date" type="xsd:string"/>
+                     <xsd:element name="rows" maxOccurs="unbounded">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="item" type="xsd:string"/>
+                              <xsd:element name="amount" type="xsd:integer"/>
+                              <xsd:element name="price" type="xsd:double"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=/C:/JDeveloper/mywork/collateral/po.json</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>
