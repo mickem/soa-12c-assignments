@@ -25,10 +25,27 @@
   <property name="compositeID" type="xs:string" many="false">b0ef8785-20f1-4809-8393-95edc1364a01</property>
   <component name="ProcessOrders" version="2.0">
     <implementation.bpel src="BPEL/ProcessOrders.bpel"/>
-    <componentType/>
+    <componentType>
+      <service name="ReadOrders" ui:wsdlLocation="WSDLs/ReadOrders.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/ReadOrders#wsdl.interface(Read_ptt)"/>
+      </service>
+      <reference name="WriteOrders" ui:wsdlLocation="WSDLs/WriteOrders.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/WriteOrders#wsdl.interface(Write_ptt)"/>
+      </reference>
+    </componentType>
+    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">sync</property>
   </component>
   <reference name="WriteOrders" ui:wsdlLocation="WSDLs/WriteOrders.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/WriteOrders#wsdl.interface(Write_ptt)"/>
     <binding.jca config="Adapters/WriteOrders_file.jca"/>
   </reference>
+  <wire>
+    <source.uri>ReadOrders</source.uri>
+    <target.uri>ProcessOrders/ReadOrders</target.uri>
+  </wire>
+  <wire>
+    <source.uri>ProcessOrders/WriteOrders</source.uri>
+    <target.uri>WriteOrders</target.uri>
+  </wire>
 </composite>

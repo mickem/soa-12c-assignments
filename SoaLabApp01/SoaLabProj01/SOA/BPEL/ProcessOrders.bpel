@@ -14,7 +14,9 @@
                xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
                xmlns:client="http://xmlns.oracle.com/SoaLabApp01/SoaLabProj01/ProcessOrders"
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
-               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/ReadOrders"
+         xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/WriteOrders">
 
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,6 +25,10 @@
      services integrated within this business process                  
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
+  <partnerLinks>
+    <partnerLink name="ReadOrders" partnerLinkType="ns1:Read_plt" myRole="Read_role"/>
+    <partnerLink name="WriteOrders" partnerLinkType="ns2:Write_plt" partnerRole="Write_role"/>
+  </partnerLinks>
   <sequence name="main">
   </sequence>
 </process>
