@@ -48,6 +48,9 @@
       <service name="SubmitOrders" ui:wsdlLocation="WSDLs/SubmitOrders.wsdl">
         <interface.wsdl interface="http://xmlns.oracle.com/SoaLabApp01/SoaLabProj01/SubmitOrders#wsdl.interface(execute_ptt)"/>
       </service>
+      <reference name="ProcessOrders.ReadOrders" ui:wsdlLocation="WSDLs/ReadOrders.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/ReadOrders#wsdl.interface(Read_ptt)"/>
+      </reference>
     </componentType>
   </component>
   <reference name="WriteOrders" ui:wsdlLocation="WSDLs/WriteOrders.wsdl">
@@ -65,5 +68,9 @@
   <wire>
     <source.uri>SubmitOrders_ep</source.uri>
     <target.uri>SubmitOrders/SubmitOrders</target.uri>
+  </wire>
+  <wire>
+    <source.uri>SubmitOrders/ProcessOrders.ReadOrders</source.uri>
+    <target.uri>ProcessOrders/ReadOrders</target.uri>
   </wire>
 </composite>
