@@ -16,7 +16,8 @@
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
                xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
          xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/ReadOrders"
-         xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/WriteOrders">
+         xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/WriteOrders"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
 
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -29,6 +30,14 @@
     <partnerLink name="ReadOrders" partnerLinkType="ns1:Read_plt" myRole="Read_role"/>
     <partnerLink name="WriteOrders" partnerLinkType="ns2:Write_plt" partnerRole="Write_role"/>
   </partnerLinks>
+  <variables>
+    <variable name="AcceptOrder_Read_InputVariable" messageType="ns1:Read_msg"/>
+    <variable name="SendOrder_Write_InputVariable" messageType="ns2:Write_msg"/>
+  </variables>
   <sequence name="main">
+    <receive name="AcceptOrder" createInstance="yes" partnerLink="ReadOrders" portType="ns1:Read_ptt" operation="Read"
+             variable="AcceptOrder_Read_InputVariable"/>
+    <invoke name="SendOrder" bpelx:invokeAsDetail="no" partnerLink="WriteOrders" portType="ns2:Write_ptt"
+            operation="Write" inputVariable="SendOrder_Write_InputVariable"/>
   </sequence>
 </process>
