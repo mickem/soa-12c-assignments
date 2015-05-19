@@ -37,6 +37,9 @@
   <xsl:template match="/">
     <tns:Orders>
       <tns:order>
+        <tns:order_id>
+          <xsl:value-of select="/ns0:orders/ns0:order/@number"/>
+        </tns:order_id>
         <tns:date>
           <xsl:value-of select="/ns0:orders/ns0:order/@date"/>
         </tns:date>
