@@ -282,5 +282,6 @@
       </hash>
    </hash>
    <value n="SCA_BPEL_FOLDER_PROPERTY_NAME" v="BPEL/"/>
+   <value n="SOA_TRANSFORMATION_FOLDER_NAME" v="Transformations/"/>
    <value n="SOA_WSDL_FOLDER_NAME" v="WSDLs/"/>
 </jpr:project>

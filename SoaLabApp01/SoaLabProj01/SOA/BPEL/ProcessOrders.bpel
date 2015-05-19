@@ -37,6 +37,15 @@
   <sequence name="main">
     <receive name="AcceptOrder" createInstance="yes" partnerLink="ReadOrders" portType="ns1:Read_ptt" operation="Read"
              variable="AcceptOrder_Read_InputVariable"/>
+    <assign name="XForm">
+      <bpelx:annotation>
+        <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+      </bpelx:annotation>
+      <copy>
+        <from>ora:doXSLTransformForDoc("../Transformations/XFormOrder.xsl", $AcceptOrder_Read_InputVariable.body)</from>
+        <to variable="SendOrder_Write_InputVariable" part="body"/>
+      </copy>
+    </assign>
     <invoke name="SendOrder" bpelx:invokeAsDetail="no" partnerLink="WriteOrders" portType="ns2:Write_ptt"
             operation="Write" inputVariable="SendOrder_Write_InputVariable"/>
   </sequence>
