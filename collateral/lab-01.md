@@ -93,6 +93,7 @@ Name          | WriteOrders
 Operation     | Write (append)
 Physical Path | c:\tmp\orders\out (or /tmp/orders/out)
 Filename      | pos.json
+Append        | Yes
 Schema        | Build schema from sample-po.json sample file.
 
 ## 4.2 Instructions
