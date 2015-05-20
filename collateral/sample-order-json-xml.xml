@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<tns:Orders xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/WriteOrders" xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/file/SoaLabApp01/SoaLabProj01/ReadOrders" xmlns:pc="http://xmlns.oracle.com/pcbpel/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:tns="http://TargetNamespace.com/WriteOrders">
+   <tns:order>
+      <tns:order_id>123</tns:order_id>
+      <tns:date>2015-05-20T01:01:01</tns:date>
+      <tns:rows>
+         <tns:item>76042: The Shield Helicarrier</tns:item>
+         <tns:amount>10</tns:amount>
+         <tns:price>3499,00</tns:price>
+      </tns:rows>
+   </tns:order>
+</tns:Orders>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<orders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.medin.name/wicked/soa/lab/01/orders ../SoaLabApp01/SoaLabProj01/SOA/Schemas/orders.xsd"
+        xmlns="http://schemas.medin.name/wicked/soa/lab/01/orders">
+  <order number="123" date="2015-05-20T01:01:01">
+    <row>
+      <item>76042: The Shield Helicarrier</item>
+      <amount>10</amount>
+      <price>3499,00</price>
+    </row>
+    <row>
+      <item>10234: Sydney Opera House</item>
+      <amount>7</amount>
+      <price>3199,00</price>
+    </row>
+    <row>
+      <item>10234: The Tumbler</item>
+      <amount>2</amount>
+      <price>2199,00</price>
+    </row>
+  </order>
+</orders>
